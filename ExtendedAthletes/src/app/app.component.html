@@ -1,0 +1,19 @@
+<h1>Athletes List</h1>
+<div class="athlete-form">
+  <div>Add a Anthlete</div>
+    <p>Athlete name: <input type="text" [(ngModel)]="name" /></p>
+    <p>Sport: <input type="text" [(ngModel)]="sport" /></p>
+    <p>Active ? 
+      <input name="UseBools" type="radio" [(ngModel)]="active" value="true">Yes 
+      <input name="UseBools" type="radio" [(ngModel)]="active" value="false">No
+    </p>
+    <button (click)="onSend()">Submit</button>
+</div>
+
+<ul>
+  <li *ngFor="let currentAthlete of athletes">
+    {{currentAthlete.name}} ({{currentAthlete.sport}})
+    <span *ngIf="currentAthlete.active === true"> is active </span>
+    <span *ngIf="currentAthlete.active === false"> is not active </span>
+  </li>
+</ul>
